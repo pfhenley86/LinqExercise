@@ -51,6 +51,13 @@ namespace LinqExercise
             Console.WriteLine();
 
             //TODO: Order numbers in any order (ascending or desc) but only print 4 of them **foreach loop only!**
+            Console.WriteLine("Numbers in ANY order bu just 4: ");
+            var numbersInAnyOrder = numbers.OrderBy(n => n).Take(4);
+
+            foreach (var number in numbersInAnyOrder)
+            {
+                Console.WriteLine(number);
+            }
 
             //TODO: Change the value at index 4 to your age, then print the numbers in descending order
 
