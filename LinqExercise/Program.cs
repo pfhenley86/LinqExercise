@@ -7,7 +7,7 @@ namespace LinqExercise
     class Program
     {
         //Static array of integers
-        private static int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+        private static int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         static void Main(string[] args)
         {
@@ -21,14 +21,34 @@ namespace LinqExercise
              */
 
             //TODO: Print the Sum of numbers
+            Console.WriteLine($"Sum: {numbers.Sum()}");
 
             //TODO: Print the Average of numbers
-
+            Console.Write($"Average: {numbers.Average()}");
+            
+            Console.WriteLine();
+            
             //TODO: Order numbers in ascending order and print to the console
+            Console.WriteLine("Numbers Ascending: ");
+            var numbersAsc = numbers.OrderBy(n => n).ToList();
+            numbersAsc.ForEach(x => Console.WriteLine(x));
+            
 
+            Console.WriteLine();
+            
             //TODO: Order numbers in descending order and print to the console
+            Console.WriteLine("Numbers Descending: ");
+            var numbersDesc = numbers.OrderByDescending(n => n).ToList();
+            numbersDesc.ForEach(n => Console.WriteLine(n));
+            
+            Console.WriteLine();
 
             //TODO: Print to the console only the numbers greater than 6
+            Console.WriteLine("Numbers Greater Than 6: ");
+            var numbersAreGreaterThanSix = numbers.Where(n => n > 6).ToList();
+            numbersAreGreaterThanSix.ForEach(n => Console.WriteLine(n));
+            
+            Console.WriteLine();
 
             //TODO: Order numbers in any order (ascending or desc) but only print 4 of them **foreach loop only!**
 
