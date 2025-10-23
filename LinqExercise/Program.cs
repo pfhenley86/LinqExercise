@@ -7,7 +7,7 @@ namespace LinqExercise
     class Program
     {
         //Static array of integers
-        private static int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        private static int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
         static void Main(string[] args)
         {
@@ -51,7 +51,7 @@ namespace LinqExercise
             Console.WriteLine();
 
             //TODO: Order numbers in any order (ascending or desc) but only print 4 of them **foreach loop only!**
-            Console.WriteLine("Numbers in ANY order bu just 4: ");
+            Console.WriteLine("Numbers in ANY order but just 4: ");
             var numbersInAnyOrder = numbers.OrderBy(n => n).Take(4);
 
             foreach (var number in numbersInAnyOrder)
@@ -60,6 +60,13 @@ namespace LinqExercise
             }
 
             //TODO: Change the value at index 4 to your age, then print the numbers in descending order
+            Console.WriteLine("Changing the value of index 4 to age");
+            numbers.SetValue(38,4);
+            
+            numbers.OrderByDescending(n => n).ToList().ForEach(n => Console.WriteLine(n));
+
+         
+            Console.WriteLine();
 
             // List of employees ****Do not remove this****
             var employees = CreateEmployees();
